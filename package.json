@@ -1,7 +1,32 @@
 {
-  "name": "no-jsx",
+  "name": "cra-template-no-jsx",
   "version": "0.1.0",
-  "private": true,
+  "license": "MIT",
+  "author": "Morten Barklund <morten.barklund@gmail.com",
+  "main": "template.json",
+  "description": "A minimal Create React App template using classes and no jsx but pure React JS API",
+  "keywords": [
+    "react",
+    "create-react-app",
+    "cra-template",
+    "template",
+    "minimal",
+    "jsx",
+    "no-jsx",
+    "create-element"
+  ],
+  "files": [
+    "template",
+    "template.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/barklund/cra-template-no-jsx",
+    "directory": "/"
+  },
+  "bugs": {
+    "url": "https://github.com/barklund/cra-template-no-jsx/issues"
+  },
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -11,7 +36,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "clean-files": "rm -rf ./template/public ./template/src",
+    "copy-files": "cp -a ./src/. template/src && cp -a ./public/. template/public",
+    "prepublishOnly": "yarn clean-files && yarn copy-files"
   },
   "eslintConfig": {
     "extends": "react-app"
